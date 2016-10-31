@@ -1,0 +1,4 @@
+-w Book.dict
+-input mic
+-charconv euc-jp utf8
+-lv 1000

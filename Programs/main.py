@@ -1,16 +1,12 @@
-# -*- coding: utf-8 -*-
+# _*_ coding: utf-8 _*_
+#!/usr/bin/env python
 
 import subprocess
 import time
 
-def main():
-    subprocess.call('julius')
-    print("julius起動中")
-    #ここに起動完了をチェックする処理
+p = subprocess.Popen(["bash Wait_mode.sh"], stdout=subprocess.PIPE, shell=True)
+pid = p.stdout.read()
 
-    while (result != 0):
-        result = 0
-        #ここにjuliusの起動後の<PleaseSpeak>と文字列を表示する処理
-        result = ""#読み取った文字列
-    if(result == "本を探して"):
-        print("")
+p.kill()
+subprocess.call(["kill" + pid], shell=True)
+
